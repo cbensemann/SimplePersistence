@@ -16,7 +16,7 @@
 package nz.co.nomadconsulting.simplepersistence;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.RequestScoped;
+import javax.enterprise.context.ConversationScoped;
 import javax.enterprise.inject.Default;
 import javax.enterprise.inject.Disposes;
 import javax.enterprise.inject.Produces;
@@ -34,7 +34,7 @@ public class EntityManagerProducer {
 
     @Produces
     @Default
-    @RequestScoped
+    @ConversationScoped
     public EntityManager create() {
         return entityManagerFactory.createEntityManager();
     }
